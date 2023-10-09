@@ -2,19 +2,29 @@
 import Image from 'next/image'
 import { useState, useRef } from 'react'
 
+import { createstroke } from './actions/api/createstroke'
+import Contract from './components/Contract';
+
 export default function Home() {
-  const [strokeval, setStrokeval] = useState('');
+  const [strokeno, setStrokeno] = useState('');
+  const [showtable1, setShowtable1] = useState(false);
+
   const inputRef = useRef<HTMLInputElement>(null);
 
 
-  const handleInputChange = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault(); 
+  const handleInputChange = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault();
   
     if (inputRef.current) {
-      setStrokeval(inputRef.current.value);
+      setStrokeno(inputRef.current.value);
+      const result = await createstroke(strokeno);
+      if(result === "Successfully created new strokeno"){
+        setShowtable1(true);
+      }
     }
   };
 
+ 
 
   return (
     <div className='h-screen'>
@@ -45,7 +55,7 @@ export default function Home() {
     <div className='lg:grid grid-cols-2 grid-rows-1 lg:h-[540px]'>
       <div className='col-span-1 bg-blue-300'>
         <div className='flex flex-col gap-3 h-full'>
-          <div className='basis-1/6 bg-slate-200'></div>
+          <div className='basis-1/6 bg-slate-200'>{showtable1 && <Contract strokeno={strokeno} />}</div>
           <div className='basis-1/6 bg-slate-200'></div>
           <div className='basis-1/6 bg-slate-200'></div>
           <div className='basis-3/6 bg-slate-200'></div>
