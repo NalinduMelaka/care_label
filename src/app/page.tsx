@@ -27,14 +27,22 @@ export default function Home() {
         </div>
       </div>
 
-    <div className='lg:grid grid-cols-2 grid-rows-1 lg:h-[540px] gap-1'>
-      <div className='col-span-1 bg-blue-300'></div>
-      <div className='col-span-1 bg-blue-300'></div>
+    <div className='lg:grid grid-cols-2 grid-rows-1 lg:h-[540px]'>
+      <div className='col-span-1 bg-blue-300'>
+        <div className='flex flex-col gap-3 h-full'>
+          <div className='basis-1/6 bg-slate-200'></div>
+          <div className='basis-1/6 bg-slate-200'></div>
+          <div className='basis-1/6 bg-slate-200'></div>
+          <div className='basis-3/6 bg-slate-200'></div>
+        </div>
+      </div>
+      <div className='col-span-1 bg-blue-300'><Image src={"/img.png"}
+      alt='image' width={300} height={500}/></div>
     </div>
 
       <div className='flex flex-row justify-center bg-blue-300'>
-        <button className='bg-sky-600 m-1 p-1 border-gray-300'>PROCESS PROOF SHEET</button>
-        <button className='bg-sky-600 m-1 p-1 border-gray-300'>UNKNOWN</button>
+        <button className='bg-sky-600 m-1 p-1 border-2 border-white'>PROCESS PROOF SHEET</button>
+        <button className='bg-sky-600 m-1 p-1 border-2 border-white'>UNKNOWN</button>
       </div>
     </div>
   )
