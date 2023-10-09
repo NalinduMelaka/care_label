@@ -1,14 +1,29 @@
+'use client'
 import Image from 'next/image'
+import { useState, useRef } from 'react'
 
 export default function Home() {
+  const [strokeval, setStrokeval] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+
+
+  const handleInputChange = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.preventDefault(); 
+  
+    if (inputRef.current) {
+      setStrokeval(inputRef.current.value);
+    }
+  };
+
+
   return (
     <div className='h-screen'>
       <div className='flex flex-row justify-between bg-cyan-600 text-slate-100  content-center'>
         <div className='flex flex-row items-center '>
           <div className='border m-1 p-3'>
           <label>STROKE NO</label>
-          <input className='focus:border-blue-400 border text-black w-20 mx-2'/>
-          <button className='border hover:bg-sky-700'>SEARCH ORDER</button>
+          <input className='focus:border-blue-400 border text-black w-20 mx-2' ref={inputRef}/>
+          <button className='border hover:bg-sky-700' onClick={handleInputChange}>SEARCH ORDER</button>
           </div>
          <div>
           <div className='flex flex-col'>RUN MODE</div>
