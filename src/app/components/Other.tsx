@@ -4,7 +4,17 @@ type Props = {}
 
 const Other = (props: Props) => {
   return (
-    <div>Other</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Ref No</th>
+          <th>LABEL_TYPE</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
   )
 }
 

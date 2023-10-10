@@ -1,38 +1,17 @@
+
 import React, { useState } from 'react'
 import { createtable1 } from '../actions/api/createtabel1';
+import prisma from '../lib/prisma';
+import Userinputforcon from './Userinputforcon';
+import Contractdata from './Contractdata';
 
 type Props = {
   strokeno: string;
 }
 
-const Contract: React.FC<Props> = ({ strokeno })  => {
-  
-  const [constractno, setConstractno] = useState('');
-  const [season, setSeason] = useState('');
-  const [tdept, setTdept] = useState('');
-  const [prodesc, setProdesc] = useState('');
-  const[strokedesc, setStrokedesc] = useState('');
+const Contract = ({ strokeno }: Props)  => {
   const stroke = strokeno;
-
-  const handleenterpress = async (e: React.KeyboardEvent) => {
-    if(e.key === "Enter"){
-      if(constractno && season && tdept && prodesc && strokedesc && stroke){
-        const result = await createtable1(constractno,season,tdept,prodesc,strokedesc, stroke);
-
-        if(result === "Successfully created new strokeno"){
-          setConstractno('');
-          setSeason('');
-          setTdept('');
-          setProdesc('');
-          setStrokedesc('');
-        }else{
-          alert(result);
-        }
-      }else{
-        alert("please fill in all fields.");
-      }
-    }
-  }
+  
  
   return (
     <div>
@@ -49,29 +28,10 @@ const Contract: React.FC<Props> = ({ strokeno })  => {
         </tr>
         </thead>
         <tbody>
-          <td></td>
-          <td >{strokeno}</td>
-          <td ><input className='w-20'
-          type='text'
-          value={constractno}
-          onChange={(e) => setConstractno(e.target.value)}
-          /></td>
-          <td><input className='w-20'
-          type='text'
-          value={season}
-          onChange={(e) => setSeason(e.target.value)}/></td>
-          <td ><input className='w-20'
-          type='text'
-          value={tdept}
-          onChange={(e) => setTdept(e.target.value)}/></td>
-          <td><input className='w-20' type='text'
-          value={prodesc}
-          onChange={(e) => setProdesc(e.target.value)}/></td>
-          <td><input className='w-20' type='text'
-          value={strokedesc}
-          onChange={(e) => setStrokedesc(e.target.value)
-          }
-          onKeyPress={handleenterpress}/></td>
+          <Contractdata strokeno = {stroke}/>
+          <Userinputforcon strokeno={stroke} />
+
+     
         </tbody>
       </table>
     </div>
