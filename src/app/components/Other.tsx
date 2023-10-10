@@ -1,4 +1,5 @@
 import React from 'react'
+import Userinputforother from './Userinputforother'
 
 type Props = {}
 
@@ -12,7 +13,7 @@ const Other = (props: Props) => {
         </tr>
       </thead>
       <tbody>
-
+          <Userinputforother />
       </tbody>
     </table>
   )
