@@ -4,16 +4,16 @@ type Props = {}
 
 const Care = (props: Props) => {
   return (
-    <table>
+    <table className="border-separate border border-slate-500 text-xs">
       <thead>
         <tr>
-          <th>Ref No</th>
-          <th>Wash Symbol</th>
-          <th>Fibre</th>
-          <th>Zoodes</th>
-          <th>COO</th>
-          <th>Caretext</th>
-          <th>MPART/FW</th>
+          <th className='border border-black font-thin w-14'>Ref No</th>
+          <th className='border border-black font-thin w-14'>Wash Symbol</th>
+          <th className='border border-black font-thin w-28'>Fibre</th>
+          <th className='border border-black font-thin w-14'>Zoodes</th>
+          <th className='border border-black font-thin w-14'>COO</th>
+          <th className='border border-black font-thin w-14'>Caretext</th>
+          <th className='border border-black font-thin w-14'>MPART/FW</th>
         </tr>
       </thead>
       <tbody>

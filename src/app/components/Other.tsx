@@ -4,11 +4,11 @@ type Props = {}
 
 const Other = (props: Props) => {
   return (
-    <table>
+    <table className="border-separate border border-slate-500 text-xs">
       <thead>
         <tr>
-          <th>Ref No</th>
-          <th>LABEL_TYPE</th>
+          <th className='border border-black font-thin w-14'>Ref No</th>
+          <th className='border border-black font-thin w-44'>LABEL_TYPE</th>
         </tr>
       </thead>
       <tbody>

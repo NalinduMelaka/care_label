@@ -5,6 +5,9 @@ import { useState } from 'react'
 import { createstroke } from '../actions/api/createstroke'
 import Contract from '../components/Contract';
 import Strokein from './Strokein';
+import Care from './Care';
+import Other from './Other';
+import Quantity from './Quantity'
 
 export default function Maini() {
   const [strokeno, setStrokeno] = useState('');
@@ -57,9 +60,9 @@ export default function Maini() {
       <div className='col-span-1 bg-blue-300'>
         <div className='flex flex-col gap-3 h-full'>
           <div className='basis-1/6 bg-slate-200'>{showtable1 && <Contract strokeno={strokeno} />}</div>
-          <div className='basis-1/6 bg-slate-200'></div>
-          <div className='basis-1/6 bg-slate-200'></div>
-          <div className='basis-3/6 bg-slate-200'></div>
+          <div className='basis-1/6 bg-slate-200'>{showtable1 && <Care/>}</div>
+          <div className='basis-1/6 bg-slate-200'>{showtable1 && <Other/>}</div>
+          <div className='basis-3/6 bg-slate-200'>{showtable1 && <Quantity/>}</div>
         </div>
       </div>
       <div className='col-span-1 bg-blue-300'><Image src={"/img.png"}
