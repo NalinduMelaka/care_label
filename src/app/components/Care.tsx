@@ -1,4 +1,5 @@
 import React from 'react'
+import Userinputforcare from './Userinputforcare'
 
 type Props = {}
 
@@ -17,7 +18,7 @@ const Care = (props: Props) => {
         </tr>
       </thead>
       <tbody>
-
+        <Userinputforcare />
       </tbody>
     </table>
   )
