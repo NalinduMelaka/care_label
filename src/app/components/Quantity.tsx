@@ -1,4 +1,5 @@
 import React from 'react'
+import Userinputforquntity from './Userinputforquntity'
 
 type Props = {}
 
@@ -18,7 +19,7 @@ const Quantity = (props: Props) => {
         </tr>
       </thead>
       <tbody>
-
+        <Userinputforquntity />
       </tbody>
     </table>
   )
