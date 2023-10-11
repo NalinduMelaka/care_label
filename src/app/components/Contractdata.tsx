@@ -21,6 +21,10 @@ type Props = {
 export default  function Contractdata({ strokeno }: Props) {
   const [contracts, setContracts] = useState<Contract[]>([]);
 
+  const handleRowClick = (contractNo: string) => {
+    console.log('Clicked on contract number:', contractNo);
+  };
+
   useEffect(() => {
     const fetchContracts = async () => {
       const fetchedContracts = await getcontract(strokeno);
@@ -33,14 +37,14 @@ export default  function Contractdata({ strokeno }: Props) {
   return (
     <>
     {contracts.map(contract => (
-      <tr key={contract.constractno}>
-        <td></td>
-        <td>{contract.stroke_id}</td>
-        <td>{contract.constractno}</td>
-        <td>{contract.season}</td>
-        <td>{contract.tdept}</td>
-        <td>{contract.prodesc}</td>
-        <td>{contract.stroke_desc}</td>
+      <tr key={contract.constractno} onClick={() => handleRowClick(contract.constractno)}>
+        <td className='border border-black'></td>
+        <td className='border border-black'>{contract.stroke_id}</td>
+        <td className='border border-black'>{contract.constractno}</td>
+        <td className='border border-black'>{contract.season}</td>
+        <td className='border border-black'>{contract.tdept}</td>
+        <td className='border border-black'>{contract.prodesc}</td>
+        <td className='border border-black'>{contract.stroke_desc}</td>
       </tr>
     ))}</>
   )

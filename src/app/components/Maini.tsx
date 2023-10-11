@@ -59,14 +59,13 @@ export default function Maini() {
     <div className='lg:grid grid-cols-2 grid-rows-1 lg:h-[540px]'>
       <div className='col-span-1 bg-blue-300'>
         <div className='flex flex-col gap-3 h-full'>
-          <div className='basis-1/6 bg-slate-200'>{showtable1 && <Contract strokeno={strokeno} />}</div>
-          <div className='basis-1/6 bg-slate-200'>{showtable1 && <Care/>}</div>
-          <div className='basis-1/6 bg-slate-200'>{showtable1 && <Other/>}</div>
-          <div className='basis-3/6 bg-slate-200'>{showtable1 && <Quantity/>}</div>
+          <div className='basis-1/6 bg-slate-200 overflow-auto'>{showtable1 && <Contract strokeno={strokeno} />}</div>
+          <div className='basis-1/6 bg-slate-200 overflow-auto'>{showtable1 && <Care/>}</div>
+          <div className='basis-1/6 bg-slate-200 overflow-auto'>{showtable1 && <Other/>}</div>
+          <div className='basis-3/6 bg-slate-200 overflow-auto'>{showtable1 && <Quantity/>}</div>
         </div>
       </div>
-      <div className='col-span-1 bg-blue-300'><Image src={"/img.png"}
-      alt='image' width={300} height={500}/></div>
+      <div className='col-span-1 bg-blue-300'></div>
     </div>
 
       <div className='flex flex-row justify-center bg-blue-300'>
