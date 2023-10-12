@@ -8,15 +8,17 @@ import Strokein from './Strokein';
 import Care from './Care';
 import Other from './Other';
 import Quantity from './Quantity'
+import { useMyContext } from '../context/MyContext';
 
 export default function Maini() {
+  const { state1, state2, setState1, setState2 } = useMyContext();
   const [strokeno, setStrokeno] = useState('');
   const [showtable1, setShowtable1] = useState(false);
+  console.log('stroke is running on maini')
 
   const handleInputChange = async () => {
     try{
    if (strokeno) {
-   
      const result = await createstroke(strokeno);
      if(result === "Successfully created new strokeno"){
        setShowtable1(true);
@@ -36,7 +38,8 @@ export default function Maini() {
         <div className='flex flex-row items-center '>
           <div className='border m-1 p-3'>
           <label>STROKE NO</label>
-          <input onChange={(e) => setStrokeno(e.target.value)} className='focus:border-blue-400 border text-black w-20 mx-2'/>
+          <input onChange={(e) => {e.preventDefault()
+                                  setStrokeno(e.target.value)}} className='focus:border-blue-400 border text-black w-20 mx-2'/>
           <button className='border hover:bg-sky-700' onClick={handleInputChange} >SEARCH ORDER</button>
           </div>
          <div>

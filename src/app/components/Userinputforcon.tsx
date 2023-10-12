@@ -1,6 +1,7 @@
 'use client'
-import { useState } from "react";
+import {  useState } from "react";
 import { createtable1 } from "../actions/api/createtabel1";
+import { useMyContext } from "../context/MyContext";
 
 type Props = {
   strokeno: string;
@@ -14,6 +15,7 @@ const Userinputforcon = ({ strokeno }: Props) => {
   const [prodesc, setProdesc] = useState('');
   const[strokedesc, setStrokedesc] = useState('');
   const stroke = strokeno;
+  const {inputState1, setInputState1} = useMyContext();
 
   const handleenterpress = async (e: React.KeyboardEvent) => {
     if(e.key === "Enter"){
@@ -26,6 +28,7 @@ const Userinputforcon = ({ strokeno }: Props) => {
           setTdept('');
           setProdesc('');
           setStrokedesc('');
+          setInputState1(!inputState1);
         }else{
           alert(result);
         }

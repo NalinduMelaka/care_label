@@ -1,9 +1,9 @@
 'use server';
 import prisma from '@/app/lib/prisma'
 
-export const createcare = async (refno: string, washsymbol: string, fibre: string, zoordes: string, mpart: string, coo: string, caretext: string, contractid: string) => {
+export const createcare = async (refno: string, washsymbol: string, fibre: string, zoordes: string, mpart: string, coo: string, caretext: string, state1: string) => {
  
-   if(refno && washsymbol && fibre && zoordes && mpart && coo && caretext && contractid){
+   if(refno && washsymbol && fibre && zoordes && mpart && coo && caretext && state1){
     await prisma.carelabel.create({
       data: {
         ref_no: refno,
@@ -13,7 +13,7 @@ export const createcare = async (refno: string, washsymbol: string, fibre: strin
         mpart_fw: mpart,
         coo,
         caretext,
-        contract_id: contractid
+        contract_id: state1
       }
     });
     return "Successfully created new strokeno";

@@ -1,5 +1,6 @@
 import React from 'react'
 import Userinputforcare from './Userinputforcare'
+import Caredata from './Caredata'
 
 type Props = {}
 
@@ -18,6 +19,7 @@ const Care = (props: Props) => {
         </tr>
       </thead>
       <tbody>
+        <Caredata />
         <Userinputforcare />
       </tbody>
     </table>

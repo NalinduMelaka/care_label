@@ -2,6 +2,7 @@
 import { useState, useEffect} from 'react'
 import prisma from '../lib/prisma'
 import { getcontract } from '../actions/api/getcontract';
+import { useMyContext } from '../context/MyContext';
 
 type Contract = {
   constractno: string;
@@ -20,18 +21,23 @@ type Props = {
 
 export default  function Contractdata({ strokeno }: Props) {
   const [contracts, setContracts] = useState<Contract[]>([]);
+  const { state1,setState1, inputState1 } = useMyContext();
+  console.log('setcontract is running...')
 
   const handleRowClick = (contractNo: string) => {
     console.log('Clicked on contract number:', contractNo);
+    setState1(contractNo);
   };
-
+  console.log(state1);
+  
   useEffect(() => {
     const fetchContracts = async () => {
       const fetchedContracts = await getcontract(strokeno);
       setContracts(fetchedContracts);
+      console.log('useEffect is running!')
     };
     fetchContracts();
-  }, [strokeno]);
+  },[strokeno,inputState1]);
 
     
   return (
