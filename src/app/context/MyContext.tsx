@@ -5,12 +5,14 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 interface MyContextType {
   state1: string;
   state2: number;
+  state3: number;
   inputState1: boolean;
   inputState2: boolean;
   inputState3: boolean;
   inputState4: boolean;
   setState1: React.Dispatch<React.SetStateAction<string>>;
   setState2: React.Dispatch<React.SetStateAction<number>>;
+  setState3: React.Dispatch<React.SetStateAction<number>>;
   setInputState1: React.Dispatch<React.SetStateAction<boolean>>;
   setInputState2: React.Dispatch<React.SetStateAction<boolean>>;
   setInputState3: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,13 +27,14 @@ const MyContext = createContext<MyContextType | undefined>(undefined);
 export const MyProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state1, setState1] = useState<string>('');
   const [state2, setState2] = useState<number>(0);
+  const [state3, setState3] = useState<number>(0);
   const [inputState1, setInputState1] = useState<boolean>(true)
   const [inputState2, setInputState2] = useState<boolean>(true)
   const [inputState3, setInputState3] = useState<boolean>(true)
   const [inputState4, setInputState4] = useState<boolean>(true)
 
   return (
-    <MyContext.Provider value={{ state1, state2, setState1, setState2, inputState1, setInputState1, inputState2, setInputState2, inputState3, setInputState3,inputState4,setInputState4 }}>
+    <MyContext.Provider value={{ state1, state2, state3, setState1, setState2, setState3, inputState1, setInputState1, inputState2, setInputState2, inputState3, setInputState3,inputState4,setInputState4 }}>
       {children}
     </MyContext.Provider>
   );

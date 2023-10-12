@@ -1,5 +1,6 @@
 import React from 'react'
 import Userinputforother from './Userinputforother'
+import Otherdata from './Otherdata'
 
 type Props = {}
 
@@ -13,6 +14,7 @@ const Other = (props: Props) => {
         </tr>
       </thead>
       <tbody>
+          <Otherdata />
           <Userinputforother />
       </tbody>
     </table>
