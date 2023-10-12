@@ -47,7 +47,7 @@ const Userinputforquntity = (props: Props) => {
       <td className='border border-black'><input type='text'onChange={(e) => setPrimarysize(e.target.value)} value={primarysize} className='w-20 bg-slate-200'/></td>
       <td className='border border-black'><input type='text'onChange={(e) => setSecondarysize(e.target.value)} value={secondarysize} className='w-20 bg-slate-200'/></td>
       <td className='border border-black'><input type='text'onChange={(e) => setSellingprice(Number(e.target.value))} value={sellingprice} className='w-20 bg-slate-200'/></td>
-      <td className='border border-black'><input type='text'onChange={(e) => setOrderqty(e.target.value)} value={orderqty} className='w-20 bg-slate-200'/></td>
+      <td className='border border-black'><input type='text'onChange={(e) => setOrderqty(e.target.value)} value={orderqty} className='w-20 bg-slate-200' onKeyPress={handleenterpress}/></td>
     </tr>
   )
 }
