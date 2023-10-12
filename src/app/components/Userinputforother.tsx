@@ -9,7 +9,7 @@ const Userinputforother = (props: Props) => {
   const [refno, setRefno] = useState('');
   const [labeltype, setLabeltype] = useState("");
   const {state2,setInputState3,inputState3} = useMyContext();
-
+  
   const handleenterpress = async (e: React.KeyboardEvent) => {
     if(e.key === "Enter"){
       if(refno && labeltype && state2 ){
@@ -29,8 +29,8 @@ const Userinputforother = (props: Props) => {
   }
   return (
     <tr>
-      <td><input type='text' className='w-14' value={refno} onChange={(e) => setRefno(e.target.value)}/></td>
-      <td><input type='text' className='w-44' value={labeltype} onChange={(e) => setLabeltype(e.target.value)} onKeyPress={handleenterpress}/></td>
+      <td className='border border-black'><input type='text' className='w-14 bg-slate-200' value={refno} onChange={(e) => setRefno(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-44 bg-slate-200' value={labeltype} onChange={(e) => setLabeltype(e.target.value)} onKeyPress={handleenterpress}/></td>
     </tr>
   )
 }

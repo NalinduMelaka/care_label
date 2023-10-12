@@ -41,13 +41,13 @@ const Userinputforcare = (props: Props) => {
 
   return (
     <tr>
-      <td><input type='text' className='w-14 border border-black bg-slate-200 ' value={refno} onChange={(e) => setRefno(e.target.value)}/></td>
-      <td><input type='text' className='w-14 border border-black bg-slate-200 ' value={washsymbol} onChange={(e) => setWashsymbol(e.target.value)}/></td>
-      <td><input type='text' className='w-28 border border-black bg-slate-200 ' value={fibre} onChange={(e) => setFibre(e.target.value)}/></td>
-      <td><input type='text' className='w-14 border border-black bg-slate-200 ' value={zoordes} onChange={(e) => setZoordes(e.target.value)}/></td>
-      <td><input type='text' className='w-14 border border-black bg-slate-200 ' value={mpart} onChange={(e) => setMpart(e.target.value)}/></td>
-      <td><input type='text' className='w-14 border border-black bg-slate-200 ' value={coo} onChange={(e) => setCoo(e.target.value)}/></td>
-      <td><input type='text' className='w-17 border border-black bg-slate-200 ' value={caretext} onChange={(e) => setCaretext(e.target.value)} onKeyPress={handleenterpress}/></td>
+      <td className='border border-black'><input type='text' className='w-14 border bg-slate-200 ' value={refno} onChange={(e) => setRefno(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-14 border bg-slate-200 ' value={washsymbol} onChange={(e) => setWashsymbol(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-28 border bg-slate-200 ' value={fibre} onChange={(e) => setFibre(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-14 border bg-slate-200 ' value={zoordes} onChange={(e) => setZoordes(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-14 border bg-slate-200 ' value={mpart} onChange={(e) => setMpart(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-14 border bg-slate-200 ' value={coo} onChange={(e) => setCoo(e.target.value)}/></td>
+      <td className='border border-black'><input type='text' className='w-17 border bg-slate-200 ' value={caretext} onChange={(e) => setCaretext(e.target.value)} onKeyPress={handleenterpress}/></td>
     </tr>
   )
 }
